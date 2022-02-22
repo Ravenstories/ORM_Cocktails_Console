@@ -8,5 +8,7 @@ namespace ORM_Cocktails_Console.CRUD
 {
     class Create
     {
+        // Did not get to complete the CRUD because I strugled with foreign keys.
+
     }
 }

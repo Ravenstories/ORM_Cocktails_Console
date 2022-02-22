@@ -8,5 +8,6 @@ namespace ORM_Cocktails_Console.CRUD
 {
     class Update
     {
+        // Did not get to complete the CRUD because I strugled with foreign keys.
     }
 }

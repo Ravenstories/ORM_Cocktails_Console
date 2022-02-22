@@ -15,47 +15,31 @@ namespace ORM_Cocktails_Console.CRUD
         {
             using (var ctx = new Cocktail_DB_Drink_Context())
             {
-                var selectAll = ctx.Drinks.OrderBy(d => d.drinkName).ToList();
+                var selectAll = ctx.Drink.OrderBy(d => d.drinkName).ToList();
 
-                foreach (Cocktail_Drinks drink in selectAll)
+                foreach (Drink drink in selectAll)
                 {
                     Console.WriteLine("Name: " + drink.drinkName);
-                    if (drink.ingredients != null)
+                    if (drink.ingredientItem != null)
                     {
-                        Console.WriteLine("Ingredients: " + string.Join(", ", drink.ingredients.Select(i => i.ingredient.name)));
+                        Console.WriteLine("Ingredients: " + string.Join(", ", drink.ingredientItem.Select(i => i.ingredient.name)));
                     }
                     Console.WriteLine("Other: " + drink.other + "\n");
                 }
             }
         }
-        // Show one drink 
+        // Show one drink (Not complete)
         public void showOneDrinks(int id)
         {
             using (var ctx = new Cocktail_DB_Drink_Context())
             {
-                var selectOne = ctx.Drinks.Find(id);
+                var selectOne = ctx.Drink.Find(id);
                 
                 Console.WriteLine("Name: " + selectOne.drinkName);
-                Console.WriteLine("Ingredients: " + selectOne.ingredients);
+                Console.WriteLine("Ingredients: " + selectOne.ingredientItem);
                 Console.WriteLine("Other: " + selectOne.other + "\n");
             }
         }
-
-        public void showAllIngredientItems()
-        {
-            using (var ctx = new Cocktail_DB_Drink_Context())
-            {
-                var selectAll = ctx.IngredientItems.OrderBy(d => d.drink.drinkName).ToList();
-
-                foreach (Cocktail_IngredientItem drink in selectAll)
-                {
-                    Console.WriteLine("Name: " + drink.drink.drinkName);
-                    
-                    Console.WriteLine("Ingredients: " + string.Join(", ", drink.ingredient.name));
-                    
-                    Console.WriteLine("Other: " + drink.drink.other + "\n");
-                }
-            }
-        }
+        
     }
 }

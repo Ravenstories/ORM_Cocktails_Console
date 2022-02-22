@@ -9,13 +9,25 @@ namespace ORM_Cocktails_Console.DB_Context
 {
     class Cocktail_DB_Drink_Context : DbContext
     {
+        /// <summary>
+        /// Did not complete this asignment. I would have liked to work more on the context classes.
+        /// </summary>
         public Cocktail_DB_Drink_Context() : base()
         {
-            Database.SetInitializer<Cocktail_DB_Drink_Context>(new DropCreateDatabaseAlways<Cocktail_DB_Drink_Context>());
         }
 
-        public DbSet<Cocktail_Drinks> Drinks {get; set;}
-        public DbSet<Cocktail_Ingredients> Ingredients { get; set; }
-        public DbSet<Cocktail_IngredientItem> IngredientItems { get; set; }
+        public DbSet<Drink> Drink {get; set;}
+        public DbSet<Ingredient> Ingredient { get; set; }
+        //public DbSet<IngredientItem> IngredientItem { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+
+            modelBuilder.Entity<IngredientItem>().HasKey(ii => new { ii.drinkId, ii.ingredientId });
+
+
+        }
     }
 }

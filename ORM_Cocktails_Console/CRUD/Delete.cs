@@ -15,9 +15,9 @@ namespace ORM_Cocktails_Console.CRUD
         {
             using (var ctx = new Cocktail_DB_Drink_Context())
             {
-                var selectAll = ctx.Drinks.OrderBy(d => d.drinkName).ToList();
+                var selectAll = ctx.Drink.OrderBy(d => d.drinkName).ToList();
 
-                ctx.Drinks.RemoveRange(selectAll);
+                ctx.Drink.RemoveRange(selectAll);
                 ctx.SaveChanges();
             }
         }
@@ -26,9 +26,9 @@ namespace ORM_Cocktails_Console.CRUD
         {
             using (var ctx = new Cocktail_DB_Drink_Context())
             {
-                var selectDrinkToDelete = ctx.Drinks.Find(id);
+                var selectDrinkToDelete = ctx.Drink.Find(id);
 
-                ctx.Drinks.Remove(selectDrinkToDelete);
+                ctx.Drink.Remove(selectDrinkToDelete);
                 ctx.SaveChanges();
             }
         }

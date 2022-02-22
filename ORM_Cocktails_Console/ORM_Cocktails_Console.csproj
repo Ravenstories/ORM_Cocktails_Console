@@ -54,16 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Cocktail_Dataset.cs" />
-    <Compile Include="Cocktail_IngredientItem.cs" />
+    <Compile Include="IngredientItem.cs" />
     <Compile Include="DB_Context\Cocktail_DB_Context.cs" />
     <Compile Include="DB_Context\Cocktail_DB_Drink_Context.cs" />
-    <Compile Include="Cocktail_Drinks.cs" />
-    <Compile Include="Cocktail_Ingredients.cs" />
+    <Compile Include="Drink.cs" />
+    <Compile Include="Ingredient.cs" />
     <Compile Include="CRUD\Create.cs" />
     <Compile Include="CRUD\Delete.cs" />
     <Compile Include="CRUD\Read.cs" />
     <Compile Include="CRUD\Update.cs" />
-    <Compile Include="DB_Context\Cocktail_DB_Ingredient_Context.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
